@@ -12,7 +12,7 @@
   <script>
     delete module.exports
   </script>
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="lib/jquery-3.2.1.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="./window.js" charset="utf-8"></script>
 
@@ -23,7 +23,7 @@
       height: 10;
     }
     input, span {
-      font-size: 4vw;
+      font-size: 2vw;
       width: 25vw;
       height: 6vh;
     }
@@ -57,16 +57,17 @@
         <label class="hash-heading" for="text-input">请输入刷新时间间隔，单位：分钟，时间间隔不能少于 10 分钟.</label>
         <input type="text" id="text-input" autofocus="autofocus"
                required="required" pattern="\d{2,5}"></input> <span>分钟</span>
-        <br/>
-        <button id="create_button">Create LIS Report(PDF)!</button>
+        <label id="results"/>
         </pre>
       </div>
       </form>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <button id="create_button">Create LIS Report(PDF)!</button>
+      </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <pre id="results"></pre>
       </div>
     </div>
 

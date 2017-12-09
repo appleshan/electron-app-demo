@@ -11,15 +11,25 @@ $(() => {
       return;
     }
 
+    const time_val = $("#text-input").val();
     const request_url = host + app_url + time_val;
     $.ajax({
       url: request_url,
       method: "GET",
-      cache: false
+      cache: false,
+      beforeSend: function( xhr ) {
+        $("#create_button").attr('disabled','disabled');
+      }
     })
-    .done(function( restResponse ) {console.log("done")
+    .done(function( restResponse ) {
       $("#results").css("background-color", "yellow");
-      $("#results").text( restResponse.errorMsg );
+      if(restResponse.success) {
+        $("#results").text( "执行成功！" );
+      }
+      else {
+        $("#results").text( restResponse.errorMsg );
+      }
+      $("#create_button").removeAttr('disabled');
     });
 
   });
