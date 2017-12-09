@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LIS Report(PDF) Create</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Scripts -->
+  <script>
+    delete module.exports
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="./window.js" charset="utf-8"></script>
+
+  <style>
+    h2 {
+      font-family: "Segoe UI", Arial, "Microsoft Yahei", sans-serif;
+      font-size: 4vw;
+      height: 10;
+    }
+    input, span {
+      font-size: 4vw;
+      width: 25vw;
+      height: 6vh;
+    }
+    input:required:invalid {
+      background-color: lightgray;
+    }
+    input:required:invalid + span::before {
+      width: 5vw;
+      font-size: 4vw;
+      content: "❌"
+    }
+    input:required:valid {
+      background-color: lightgreen;
+    }
+    input:required:valid + span::before {
+      width: 5vw;
+      font-size: 4vw;
+      content: "✅"
+    }
+  </style>
+</head>
+<body>
+  <div id="container" class="container-fluid">
+    <h2>LIS Report(PDF) Create</h2>
+
+    <!-- Input row -->
+    <div class="row">
+      <form>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <pre>
+        <label class="hash-heading" for="text-input">请输入刷新时间间隔，单位：分钟，时间间隔不能少于 10 分钟.</label>
+        <input type="text" id="text-input" autofocus="autofocus"
+               required="required" pattern="\d{2,5}"></input> <span>分钟</span>
+        <br/>
+        <button id="create_button">Create LIS Report(PDF)!</button>
+        </pre>
+      </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <pre id="results"></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <pre>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    We are using Node.js <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+        </pre>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
